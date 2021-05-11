@@ -361,6 +361,9 @@ body {
 	width: 100%;
 	height: auto;
 
+	margin: 0 auto;
+	align-items: center;
+
 	background: #5f6edd;
 	height: 250px;
 }
@@ -372,6 +375,7 @@ body {
 
 	justify-content: center;
 	margin: 0 auto;
+
 	align-items: center;
 }
 
@@ -380,6 +384,7 @@ body {
 	font-size: 30px;
 	font-weight: 700;
 	color: var(--base-col-white);
+	margin: 0 20px;
 }
 
 .form_email {
@@ -496,14 +501,6 @@ body {
 	transform: translateY(20%) rotate(315deg);
 }
 
-/* .footer_bth_inner {
-	cursor: pointer;
-	border: none;
-	background-color: var(--base-col-white);
-	border-radius: 50%;
-	color: black;
-} */
-
 /* !	Лэптоп	max-width: 1230px */
 
 @media (max-width: 1230px) {
@@ -513,7 +510,10 @@ body {
 		width: 100%;
 		display: flex;
 		position: relative;
+		max-width: 770px;
 	}
+
+	/* ?	INTRO */
 
 	.intro_inner {
 		width: 370px;
@@ -521,7 +521,97 @@ body {
 		justify-content: center;
 		flex-wrap: wrap;
 	}
+}
+/* !	Лэптоп	max-width: 820px */
+
+@media (max-width: 820px) {
+	.container {
+		max-width: 600px;
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+
+		width: 370px;
+
+		right: 0;
+	}
+
+	/* ?	INTRO */
+
+	.intro_inner {
+		margin: 0 auto 30px;
+	}
+
+	/* ?	PAGINATION */
+
+	.pagination_num {
+		display: flex;
+		margin: 0 auto;
+		width: 200px;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+/* !	Лэптоп	max-width: 550px */
+
+/* изменить размер картинкам скрыть навигацию, изменить пагинацию, изменить форму */
+@media (max-width: 550px) {
+	/* ?	INTRO */
+
+	.intro_img {
+		max-width: 100%;
+	}
+
+	.intro_inner {
+		max-width: 100%;
+	}
 
 	.intro_text {
+		height: auto;
+		padding-bottom: 10px;
+	}
+
+	/* ?	FORM */
+
+	.form {
+		height: auto;
+		padding-bottom: 10px;
+	}
+
+	.email {
+		max-width: 300px;
+	}
+
+	.form_email {
+		display: flex;
+		position: relative;
+		width: 100%;
+		height: 80px;
+
+		justify-content: center;
+	}
+
+	.form_email .email {
+		margin: 0 auto;
+	}
+
+	.form_email button {
+		font-family: var(--base-ff-Karla);
+		font-size: 17px;
+		font-weight: 700;
+		color: var(--base-col-white);
+
+		background: #ffbf35;
+		border-radius: 99em;
+
+		max-width: 140px;
+		height: 45px;
+
+		transform: translateY(60px);
+
+		cursor: pointer;
 	}
 }
