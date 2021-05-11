@@ -281,24 +281,32 @@ body {
 
 .pagination {
 	display: flex;
+
 	flex-wrap: wrap;
 	width: 1170px;
 	height: 60px;
 	background: #363a5b;
 	margin: 0 auto;
 	margin-bottom: 50px;
+
+	align-items: center;
 }
 
 .prev {
 	background: url(../images/icons/larrow.png) left no-repeat;
-	border: none;
+
+	border-right: 1px solid #5e617c;
+	height: 30px;
 	margin-left: 30px;
+	align-items: center;
 
 	cursor: pointer;
 }
 
 .prev span {
-	margin-left: 20px;
+	display: block;
+	position: relative;
+	margin: 0 30px;
 
 	font-family: var(--base-ff-Karla);
 	font-size: 15px;
@@ -312,10 +320,13 @@ body {
 	margin-right: 30px;
 
 	cursor: pointer;
+
+	border-left: 1px solid #5e617c;
+	height: 30px;
 }
 
 .next span {
-	margin-right: 20px;
+	margin: 0 30px;
 
 	font-family: var(--base-ff-Karla);
 	font-size: 15px;
@@ -577,8 +588,9 @@ body {
 	/* ?	FORM */
 
 	.form {
+		min-height: 250px;
 		height: auto;
-		padding-bottom: 10px;
+		padding: 30px 0;
 	}
 
 	.email {
@@ -613,5 +625,40 @@ body {
 		transform: translateY(60px);
 
 		cursor: pointer;
+	}
+
+	/* ?	PAGINATION */
+	.pagination {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: auto;
+
+		padding: 30px 0;
+
+		flex-wrap: nowrap;
+	}
+
+	.prev {
+		margin: 0;
+		padding: 0;
+
+		border: none;
+
+		transform: translateX(15px);
+	}
+
+	.next {
+		margin: 0;
+		padding: 0;
+
+		border: none;
+
+
+		transform: translateX(-15px);
+	}
+
+	.pagination_num {
+		padding: 20px 0;
 	}
 }
