@@ -12,10 +12,10 @@
 		<title>Travel</title>
 	</head>
 	<body>
-		<header class="header">
+		<header class="header" id="header">
 			<div class="logo"><img src="assets/images/logo/logo.png" alt="" /></div>
 
-			<nav class="nav">
+			<nav class="nav" id="nav">
 				<a href="#" class="nav_link">NEWS</a>
 				<a href="#" class="nav_link">FEATURES</a>
 				<a href="#" class="nav_link">PRICES</a>
@@ -25,8 +25,12 @@
 					<button><img src="assets/images/icons/magnifying_glass.png" alt="" /></button>
 				</a>
 			</nav>
+
+			<button type="button" class="nav_toggle" id="nav_toggle">
+				<span class="nav_toggle_item">Menu</span>
+			</button>
 		</header>
-		<div class="travel">
+		<div class="travel" id="travel">
 			<div class="travel_text">
 				<h1>Travel</h1>
 				<p class="travel_subtext">83 Publications</p>
@@ -153,5 +157,8 @@
 				<button class="footer_bth_inner"></button>
 			</a>
 		</footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="assets/js/app.js"></script>
 	</body>
 </html>

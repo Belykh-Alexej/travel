@@ -36,6 +36,7 @@ button {
 	font: inherit;
 	color: inherit;
 	background-color: transparent;
+	
 }
 
 body {
@@ -68,6 +69,27 @@ body {
 
 	background: #363a5b;
 }
+
+.header.fixed {
+	padding: 10px 0;
+
+	background-color: #363A5B;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+	position: fixed;
+
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding: 15px;
+
+	transform: translate3d(0, 0, 0);
+	z-index: 1;
+}
+
+/* .header.active {
+	background-color: red;
+} */
 
 .logo {
 	display: flex;
@@ -161,6 +183,85 @@ body {
 .nav_link:hover::after {
 	opacity: 1;
 }
+
+/* 	?	@@@@@@@@@@	toggle	@@@@@@@@@ */
+
+.nav_toggle {
+	width: 30px;
+	padding: 10px 0;
+	display: none;
+
+	font-size: 0;
+	color: transparent;
+
+	border: none;
+	background: none;
+	cursor: pointer;
+
+	position: absolute;
+	top: 27px;
+	right: 15px;
+	z-index: 1;
+}
+
+.nav_toggle:focus{
+	outline: none;
+}
+
+.nav_toggle_item {
+	display: block;
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--base-col-white);
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+
+	transition: 0.2s linear;
+}
+
+.nav_toggle.active .nav_toggle_item {
+	background: none;
+}
+
+.nav_toggle.active .nav_toggle_item::before {
+	transform-origin: left bottom;
+	transform: rotate(45deg) translateX(-4px);
+}
+.nav_toggle.active .nav_toggle_item::after {
+	transform-origin: left bottom;
+	transform: rotate(-45deg) translateX(-2px);
+}
+
+.nav_toggle_item::before,
+.nav_toggle_item::after {
+	content: "";
+	width: 100%;
+	height: 3px;
+
+	background-color: var(--base-col-white);
+
+	position: absolute;
+	left: 0;
+	z-index: 1;
+
+	transition: 0.2s linear;
+}
+
+.nav_toggle_item::before {
+	top: -8px;
+}
+
+.nav_toggle_item::after {
+	bottom: -8px;
+}
+
+/* 	todo	@@@@@@@@@@	TRAVEL	@@@@@@@@@ */
 
 .travel {
 	align-items: center;
@@ -570,6 +671,44 @@ body {
 
 /* изменить размер картинкам скрыть навигацию, изменить пагинацию, изменить форму */
 @media (max-width: 550px) {
+	.nav {
+		display: none;
+		position: absolute;
+		width: 100%;
+
+		padding: 8px 0;
+
+		top: 99%;
+
+		background: #4d5179;
+
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.nav.active {
+		display: block;
+
+		top: 74px;
+		/* z-index: 1; */
+	}
+
+	.nav_link {
+		width: 100%;
+	}
+
+	.nav_link::after {
+		position: relative;
+	}
+
+	.nav_link:last-child::after {
+		position: relative;
+	}
+
+	.nav_toggle {
+		display: block;
+	}
+
 	/* ?	INTRO */
 
 	.intro_img {
@@ -653,7 +792,6 @@ body {
 		padding: 0;
 
 		border: none;
-
 
 		transform: translateX(-15px);
 	}
